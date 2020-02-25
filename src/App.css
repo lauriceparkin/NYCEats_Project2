@@ -1,0 +1,235 @@
+.app {
+  background-image: url(./images/pizza.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+select { 
+  appearance: none; 
+  outline: 0; 
+  background: white; 
+  background-image: none; 
+  height: 100%; 
+  color: black; 
+  cursor: pointer; 
+  border:1px solid black; 
+  border-radius:3px; 
+} 
+
+.background{
+  background-color: gray;
+}
+
+
+/* .boro{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 50px;
+  letter-spacing: -2.5px;
+  text-align: center;
+  padding: 20px;
+} */
+
+/* .boro1{
+  text-align: left;
+
+} */
+
+.boro{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 65px;
+  font-weight: bold;
+  letter-spacing: -5px;
+  text-align: center;
+  padding: 30px;
+}
+
+
+p{
+  margin: 0;
+}
+
+
+.boroleft{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 65px;
+  font-weight: bold;
+  letter-spacing: -2.5px;
+  text-align: left;
+  padding: 5px;
+
+}
+
+.nom{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  /* font-weight: bold; */
+  letter-spacing: -2.5px;
+  text-align: center;
+  padding: 30px;
+}
+
+.home{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  letter-spacing: -2px;
+  text-align: left;
+  padding: 10px;
+ 
+}
+
+
+/* .selectorButtons{
+  background-color: black;
+  text-align: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 48%;
+  margin: 100px auto;
+  padding: 10px;
+  cursor: pointer;
+} */
+
+form{
+  display: flex;
+  justify-content: center;
+  color:white;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 2%;
+  margin-top: 12%;
+
+
+}
+
+.explanation{
+  color:white;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 10px;
+}
+
+.grade{
+  width: 100px;
+}
+
+
+button{
+  cursor: pointer;
+  /* background-color: black;
+  color: white;
+  height: 60px;
+  width: 80px;
+  border: 1px solid black;
+  font-size: 14px; */
+}
+
+button:hover{
+  cursor: pointer;
+  
+}
+
+.results{
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  margin: 10px;
+  width: 175px;
+  height: 160px;
+  border: 1px solid white;
+  text-align: center;
+
+}
+
+.allResults{
+  display:flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+
+a{
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+a:visited{
+  color:white
+}
+a:hover{
+  color:rgb(193, 9, 9);
+}
+
+a.black:hover{
+  color: black;
+}
+
+.about{
+  margin: 300px;
+  background-color: black;
+  padding: 10px;
+  color: white;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-se;
+}
+
+/* .returnBooks{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(400px, 1fr));
+  grid-column-start: 4;
+  grid-auto-rows: 1fr; 
+  margin-bottom: 40px;
+  justify-items: center;
+  grid-column-gap: 2em;
+  grid-row-gap: 3em;
+
+} */
+
+
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 2px;
+  width: 100%;
+  height: 30px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.copyright{
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 6px;
+}
+
+@media (max-width: 900px) {
+
+  .about{
+    margin: 200px 0;
+    background-color: black;
+    padding: 5px;
+    color: white;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-se;
+  }
+
+  .one{
+    background-color: black;
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    
+  }
+
+}
