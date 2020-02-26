@@ -8,51 +8,65 @@ class Boros extends Component {
     super(props);
     this.state = {
       zip: '',
+      grade: 'A',
       data: {}
     }
     this.handleChange = this.handleChange.bind(this)
-  }
-
-  handleChange(event) {
-    console.log('typing')
-    this.setState({
-      zip: event.target.value
-      //need something for boros
-    });
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
 
-  componentDidMount() {
-    this.fetchBrooklyn()
-  }
-  fetchBrooklyn = async () => {
-    try {
 
-      const brooklyn = await axios.get(
-        `https://data.cityofnewyork.us/resource/43nn-pn8j.json?boro=Brooklyn`
-      )
-      console.log(brooklyn)
-      this.setState({
-        data: brooklyn
-      })
 
-    } catch (error) {
-      console.error(error)
-    }
-  }
-   
+
+  // fetchBrooklyn = async () => 
+  //   try {
+
+  //     // const brooklyn = await axios.get(
+  //     //   `https://data.cityofnewyork.us/resource/43nn-pn8j.json?boro=Brooklyn`
+  //     // )
+  //     // console.log(brooklyn)
+  //     // this.setState({
+  //     //   data: brooklyn
+  //     // })
+
+  //   // } catch (error) {
+  //   //   console.error(error)
+  //   }
+
+
+  // `https://data.cityofnewyork.us/resource/43nn-pn8j.json?boro=Brooklyn&zipcode=${userinputfromzip}&grade=${}`
 
   handleChange = event => {
+    const { target: { name, value } } = event
+    console.log(name)
+    console.log(value)
+
     this.setState({
-      [event.target.name]: event.target.value
+      [name]: value
     })
   }
+
+
+  async handleSubmit(event) {
+    event.preventDefault();
+    const response = await axios.get(`https://data.cityofnewyork.us/resource/43nn-pn8j.json?boro=Brooklyn&zipcode=${this.state.zip}&grade=${this.state.grade}`, {
+      params: {
+        $limit: 40
+      }
+    })
+    console.log(response)
+    this.setState({
+      data: response.data
+    })
+  }
+
+
 
   render() {
     return (
       <div className="background">
 
-        {/* <body style="background-color:gray"> */}
 
         <div>
           <Link to='/'><p className="home">home</p></Link>
@@ -67,7 +81,7 @@ class Boros extends Component {
 
         <div>
 
-          <form>
+          <form onSubmit={this.handleSubmit}>
 
             <label>Enter a BK zip code: </label>
             <input
@@ -77,15 +91,21 @@ class Boros extends Component {
               id="zip"
               name="zip"
             />
-            <label>Choose your grade:</label>
 
-            <select className="grade">
-              <option>A</option>
-              <option>B</option>
-              <option>C</option>
-            </select>
+            <label>
+              Choose your grade:
+              <select value={this.state.grade} onChange={this.handleChange} name="grade">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+              </select>
+            </label>
+
+
+
+
             {/* on click listener here link to submit function make*/}
-            <button type="submit">Nom in the know</button>
+            <button type="submit">Eat Clean</button>
 
           </form>
 
@@ -167,7 +187,6 @@ class Boros extends Component {
         </div>
 
 
-        {/* </body> */}
 
       </div>
 
