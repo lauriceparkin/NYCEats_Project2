@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import Restaurants from './Restaurants'
 
 
 class Boros extends Component {
@@ -9,7 +10,7 @@ class Boros extends Component {
     this.state = {
       zip: '',
       grade: 'A',
-      data: {}
+      data: []
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -64,6 +65,8 @@ class Boros extends Component {
 
 
   render() {
+
+
     return (
       <div className="background">
 
@@ -113,76 +116,20 @@ class Boros extends Component {
 
         <br></br>
         <div className="allResults">
+          {
+            this.state.data.length > 0 &&
+            <>
+              {this.state.data.map((restaurant, index) =>
 
-          <div className="results">
-            <p>Restaurant Name</p>
-            <p>Cuisine</p>
-            <p>Address</p>
-            <p>Grade</p>
-          </div>
+                <Restaurants
+                  key={index}
+                  eatery={restaurant}
+                />
+              )}
+            </>
+          }
 
-          <div className="results">
-            <p>Restaurant Name</p>
-            <p>Cuisine</p>
-            <p>Address</p>
-            <p>Grade</p>
-          </div>
 
-          <div className="results">
-            <p>Restaurant Name</p>
-            <p>Cuisine</p>
-            <p>Address</p>
-            <p>Grade</p>
-          </div>
-
-          <div className="results">
-            <p>Restaurant Name</p>
-            <p>Cuisine</p>
-            <p>Address</p>
-            <p>Grade</p>
-          </div>
-
-          <div className="results">
-            <p>Restaurant Name</p>
-            <p>Cuisine</p>
-            <p>Address</p>
-            <p>Grade</p>
-          </div>
-
-          <div className="results">
-            <p>Restaurant Name</p>
-            <p>Cuisine</p>
-            <p>Address</p>
-            <p>Grade:</p>
-          </div>
-
-          <div className="results">
-            <p>Restaurant Name</p>
-            <p>Cuisine</p>
-            <p>Address</p>
-            <p>Grade</p>
-          </div>
-
-          <div className="results">
-            <p>Restaurant Name</p>
-            <p>Cuisine</p>
-            <p>Address</p>
-            <p>Grade</p>
-          </div>
-
-          <div className="results">
-            <p>Restaurant Name</p>
-            <p>Cuisine</p>
-            <p>Address</p>
-            <p>Grade</p>
-          </div>
-
-          <div className="results">
-            <p>Restaurant Name</p>
-            <p>Cuisine</p>
-            <p>Address</p>
-            <p>Grade</p>
-          </div>
 
         </div>
 
