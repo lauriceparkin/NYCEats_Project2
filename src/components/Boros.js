@@ -56,55 +56,59 @@ class Boros extends Component {
         </div>
 
         <div className="explanation">
-          <p>there will be a couple of lines of text here explaining restaurant grades.</p>
-        </div>
+          <div>The city’s Dept. of Health assigns grades of A, B, or C to all restaurants. These grades are not based on the deliciousness of food, but rather the number of health violations a restaurant has received.
+            <p>A = 13 or fewer violations.</p>
+            <p>B = 14-27.</p>
+            <p>C = more than 28.</p>
+          A grade of C is when things can get a bit gross: possible of lurking vermin among other things.</div>
+      </div>
 
-        <div>
+      <div>
 
-          <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit}>
 
-            <label>Enter a BK zip code:</label>
-            <input
-              onChange={this.handleChange}
-              type="text"
-              value={this.state.zip}
-              id="zip"
-              name="zip"
-            />
+          <label className="formtext">Enter a BK zip code:</label>
+          <input
+            onChange={this.handleChange}
+            type="text"
+            value={this.state.zip}
+            id="zip"
+            name="zip"
+          />
 
-            <label>
-              Choose your grade:
+          <label className="formtext">
+            Choose your grade:
               <select value={this.state.grade} onChange={this.handleChange} name="grade">
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">C</option>
-              </select>
-            </label>
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+            </select>
+          </label>
 
-            <button type="submit">Eat Clean</button>
+          <button type="submit">Find</button>
 
-          </form>
-
-        </div>
-
-        <br></br>
-        <div className="allResults">
-          {
-            this.state.data.length > 0 &&
-            <>
-              {this.state.data.map((restaurant, index) =>
-
-                <Restaurants
-                  key={index}
-                  eatery={restaurant}
-                />
-              )}
-            </>
-          }
-
-        </div>
+        </form>
 
       </div>
+
+      <br></br>
+      <div className="allResults">
+        {
+          this.state.data.length > 0 &&
+          <>
+            {this.state.data.map((restaurant, index) =>
+
+              <Restaurants
+                key={index}
+                eatery={restaurant}
+              />
+            )}
+          </>
+        }
+
+      </div>
+
+      </div >
 
     )
   }
