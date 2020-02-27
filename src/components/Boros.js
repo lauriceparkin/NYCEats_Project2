@@ -17,27 +17,6 @@ class Boros extends Component {
   }
 
 
-
-
-
-  // fetchBrooklyn = async () => 
-  //   try {
-
-  //     // const brooklyn = await axios.get(
-  //     //   `https://data.cityofnewyork.us/resource/43nn-pn8j.json?boro=Brooklyn`
-  //     // )
-  //     // console.log(brooklyn)
-  //     // this.setState({
-  //     //   data: brooklyn
-  //     // })
-
-  //   // } catch (error) {
-  //   //   console.error(error)
-  //   }
-
-
-  // `https://data.cityofnewyork.us/resource/43nn-pn8j.json?boro=Brooklyn&zipcode=${userinputfromzip}&grade=${}`
-
   handleChange = event => {
     const { target: { name, value } } = event
     console.log(name)
@@ -63,16 +42,14 @@ class Boros extends Component {
   }
 
 
-
   render() {
-
 
     return (
       <div className="background">
 
 
         <div>
-          <Link to='/'><p className="home">home</p></Link>
+          <Link to='/'><text className="home">home</text></Link>
 
           <p className="boroleft">brooklyn/</p>
 
@@ -86,7 +63,7 @@ class Boros extends Component {
 
           <form onSubmit={this.handleSubmit}>
 
-            <label>Enter a BK zip code: </label>
+            <label>Enter a BK zip code:</label>
             <input
               onChange={this.handleChange}
               type="text"
@@ -104,10 +81,6 @@ class Boros extends Component {
               </select>
             </label>
 
-
-
-
-            {/* on click listener here link to submit function make*/}
             <button type="submit">Eat Clean</button>
 
           </form>
@@ -129,11 +102,7 @@ class Boros extends Component {
             </>
           }
 
-
-
         </div>
-
-
 
       </div>
 
