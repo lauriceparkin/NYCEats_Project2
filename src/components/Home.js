@@ -12,10 +12,6 @@ function Home(props) {
         <Link to='/boros/staten-island'><p className="boro">staten island/</p></Link>
         <p className="nom">(*know before you nom, nyc)</p>
       </div>
-
-    {/* <div className="footer">
-      <p>copyright &#169; 2020</p>
-    </div> */}
     </div >
   )
 }

@@ -48,31 +48,23 @@ class Boro extends Component {
     let boroName = ""
 
     if (boro === 'staten-island') {
-      console.log('staten-island')
       boroName = "Staten Island"
 
     } else if (boro === 'queens') {
-      console.log('queens')
       boroName = "Queens"
 
-
     } else if (boro === 'manhattan') {
-      console.log('manhattan')
       boroName = 'Manhattan'
 
     } else if (boro === 'brooklyn') {
-      console.log('brooklyn')
       boroName = 'Brooklyn'
 
     } else if (boro === 'bronx') {
-      console.log('bronx')
       boroName = 'Bronx'
 
     } else {
       boroName = 'Brooklyn'
-
     }
-    console.log(boroName)
 
     this.setState({
       boro: boroName
@@ -84,7 +76,6 @@ class Boro extends Component {
 
     return (
       <div className="background">
-
 
         <div className="home">
           <Link to='/'><p>home</p></Link>
@@ -124,8 +115,8 @@ class Boro extends Component {
               </select>
             </label>
 
-            <button type="submit">Find</button>
-
+              <button type="submit">Find</button>
+            
           </form>
 
         </div>

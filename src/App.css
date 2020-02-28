@@ -54,7 +54,6 @@ p{
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
-  /* font-weight: bold; */
   letter-spacing: -2.5px;
   text-align: center;
   padding: 30px;
@@ -63,7 +62,7 @@ p{
 .home{
   color: white;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
+  font-size: 22px;
   letter-spacing: -2px;
   text-align: left;
   padding: 15px;
@@ -100,10 +99,10 @@ form{
   color:white;
   font-family: Arial, Helvetica, sans-serif;
   padding: 5px;
-  font-size: 13px;
-  margin-bottom: -90px;
-  margin-left: 20%;
-  margin-right: 20%;
+  font-size: 16px;
+  margin-bottom: -127px;
+  margin-left: 30%;
+  margin-right: 30%;
   text-align: center;
 }
 
@@ -112,8 +111,9 @@ form{
 }
 
 .formtext{
-  font-size: 13px;
+  font-size: 14px;
   margin-top: 0px;
+
 }
 
 .result p{
@@ -123,12 +123,8 @@ form{
 
 button{
   cursor: pointer;
-  /* background-color: black;
-  color: white;
-  height: 60px;
-  width: 80px;
-  border: 1px solid black;
-  font-size: 14px; */
+
+
 }
 
 button:hover{
@@ -230,7 +226,29 @@ select{
   color: white;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 800px) {
 
+  .links p{
+    font-size: 30px;
+  }
+
+  .app {
+    background-image: url(./images/pizza.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+}
+  
+form{
+  display: flex;
+  justify-content: center;
+  color:white;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 2%;
+  margin-top: 40%;
+}
+  
 
 }
