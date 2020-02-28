@@ -20,8 +20,6 @@ class Boro extends Component {
 
   handleChange = event => {
     const { target: { name, value } } = event
-    console.log(name)
-    console.log(value)
 
     this.setState({
       [name]: value
