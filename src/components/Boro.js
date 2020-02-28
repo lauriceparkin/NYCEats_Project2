@@ -4,39 +4,19 @@ import axios from 'axios'
 import Restaurants from './Restaurants'
 
 
-class Boros extends Component {
+class Boro extends Component {
   constructor(props) {
     super(props);
     this.state = {
       zip: '',
       grade: 'A',
-      data: []
+      data: [],
+      boro: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-
-
-
-
-  // fetchBrooklyn = async () => 
-  //   try {
-
-  //     // const brooklyn = await axios.get(
-  //     //   `https://data.cityofnewyork.us/resource/43nn-pn8j.json?boro=Brooklyn`
-  //     // )
-  //     // console.log(brooklyn)
-  //     // this.setState({
-  //     //   data: brooklyn
-  //     // })
-
-  //   // } catch (error) {
-  //   //   console.error(error)
-  //   }
-
-
-  // `https://data.cityofnewyork.us/resource/43nn-pn8j.json?boro=Brooklyn&zipcode=${userinputfromzip}&grade=${}`
 
   handleChange = event => {
     const { target: { name, value } } = event
@@ -51,7 +31,7 @@ class Boros extends Component {
 
   async handleSubmit(event) {
     event.preventDefault();
-    const response = await axios.get(`https://data.cityofnewyork.us/resource/43nn-pn8j.json?boro=Brooklyn&zipcode=${this.state.zip}&grade=${this.state.grade}`, {
+    const response = await axios.get(`https://data.cityofnewyork.us/resource/43nn-pn8j.json?boro=${this.state.boro}&zipcode=${this.state.zip}&grade=${this.state.grade}`, {
       params: {
         $limit: 40
       }
@@ -63,30 +43,61 @@ class Boros extends Component {
   }
 
 
+  componentDidMount() {
+    const boro = this.props.match.params.boro
+    let boroName = ""
+
+    if (boro === 'staten-island') {
+      boroName = "Staten Island"
+
+    } else if (boro === 'queens') {
+      boroName = "Queens"
+
+    } else if (boro === 'manhattan') {
+      boroName = 'Manhattan'
+
+    } else if (boro === 'brooklyn') {
+      boroName = 'Brooklyn'
+
+    } else if (boro === 'bronx') {
+      boroName = 'Bronx'
+
+    } else {
+      boroName = 'Brooklyn'
+    }
+
+    this.setState({
+      boro: boroName
+    })
+
+  }
 
   render() {
-
 
     return (
       <div className="background">
 
+        <div className="home">
+          <Link to='/'><p>home</p></Link>
+        </div>
 
         <div>
-          <Link to='/'><p className="home">home</p></Link>
-
-          <p className="boroleft">brooklyn/</p>
-
+          <p className="boroleft">{this.state.boro.toLowerCase()}/</p>
         </div>
 
         <div className="explanation">
-          <p>there will be a couple of lines of text here explaining restaurant grades.</p>
+          <div>The city’s Dept. of Health assigns grades of A, B, or C to all restaurants. These grades are not based on the deliciousness of food or excellence of service, but rather the number of health violations a restaurant has received.
+            <p>A = 13 or fewer violations</p>
+            <p>B = 14-27</p>
+            <p>C = more than 28</p>
+            Beware of the C's: there might be vermin friends lurking nearby.</div>
         </div>
 
         <div>
 
           <form onSubmit={this.handleSubmit}>
 
-            <label>Enter a BK zip code: </label>
+            <label className="formtext">Enter your {this.state.boro} zip code:</label>
             <input
               onChange={this.handleChange}
               type="text"
@@ -95,7 +106,7 @@ class Boros extends Component {
               name="zip"
             />
 
-            <label>
+            <label className="formtext">
               Choose your grade:
               <select value={this.state.grade} onChange={this.handleChange} name="grade">
                 <option value="A">A</option>
@@ -104,12 +115,8 @@ class Boros extends Component {
               </select>
             </label>
 
-
-
-
-            {/* on click listener here link to submit function make*/}
-            <button type="submit">Eat Clean</button>
-
+              <button type="submit">Find</button>
+            
           </form>
 
         </div>
@@ -129,13 +136,9 @@ class Boros extends Component {
             </>
           }
 
-
-
         </div>
 
-
-
-      </div>
+      </div >
 
     )
   }
@@ -143,4 +146,4 @@ class Boros extends Component {
 
 
 
-export default Boros
+export default Boro

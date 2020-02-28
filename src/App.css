@@ -7,6 +7,7 @@
 }
 
 
+
 select { 
   appearance: none; 
   outline: 0; 
@@ -21,22 +22,9 @@ select {
 
 .background{
   background-color: gray;
+  min-height: 100vh;
 }
 
-
-/* .boro{
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 50px;
-  letter-spacing: -2.5px;
-  text-align: center;
-  padding: 20px;
-} */
-
-/* .boro1{
-  text-align: left;
-
-} */
 
 .boro{
   color: white;
@@ -48,28 +36,24 @@ select {
   padding: 30px;
 }
 
-
 p{
-  margin: 0;
+  margin: 0px;
 }
-
 
 .boroleft{
   color: white;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 65px;
+  font-size: 55px;
   font-weight: bold;
   letter-spacing: -2.5px;
-  text-align: left;
+  text-align: center;
   padding: 5px;
-
 }
 
 .nom{
   color: white;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 30px;
-  /* font-weight: bold; */
   letter-spacing: -2.5px;
   text-align: center;
   padding: 30px;
@@ -78,24 +62,29 @@ p{
 .home{
   color: white;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 25px;
+  font-size: 22px;
   letter-spacing: -2px;
   text-align: left;
-  padding: 10px;
- 
+  padding: 15px;
 }
 
+.home a:hover{
+  color:rgb(193, 9, 9);
+}
 
-/* .selectorButtons{
-  background-color: black;
-  text-align: center;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
-  width: 48%;
-  margin: 100px auto;
-  padding: 10px;
-  cursor: pointer;
-} */
+input{
+  width: 35px;
+  margin-right: 7px;
+}
+
+label{
+  margin: 1px;
+}
+
+select{
+  width: 15px;
+
+}
 
 form{
   display: flex;
@@ -104,37 +93,47 @@ form{
   font-family: Arial, Helvetica, sans-serif;
   margin-left: 2%;
   margin-top: 12%;
-
-
 }
 
 .explanation{
   color:white;
   font-family: Arial, Helvetica, sans-serif;
-  padding: 10px;
+  padding: 5px;
+  font-size: 16px;
+  margin-bottom: -127px;
+  margin-left: 30%;
+  margin-right: 30%;
+  text-align: center;
 }
 
 .grade{
   width: 100px;
 }
 
+.formtext{
+  font-size: 14px;
+  margin-top: 0px;
+
+}
+
+.result p{
+  margin: 10px;
+
+}
 
 button{
   cursor: pointer;
-  /* background-color: black;
-  color: white;
-  height: 60px;
-  width: 80px;
-  border: 1px solid black;
-  font-size: 14px; */
+
+
 }
 
 button:hover{
-  cursor: pointer;
-  
+  cursor: pointer; 
 }
 
-.results{
+.result{
+  background-color: gray;
+  font-size: 13px;
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   margin: 10px;
@@ -142,15 +141,15 @@ button:hover{
   height: 160px;
   border: 1px solid white;
   text-align: center;
-
+  overflow-wrap: break-word;
 }
 
 .allResults{
+  background-color: gray;
   display:flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
-
 
 a{
   cursor: pointer;
@@ -161,12 +160,25 @@ a{
 a:visited{
   color:white
 }
-a:hover{
+.boro:hover{
   color:rgb(193, 9, 9);
 }
 
 a.black:hover{
   color: black;
+}
+
+.rest{
+  font-weight: 900;
+  font-size: 14px;
+  margin-top: 5px;
+  padding: 5px;
+}
+
+select{
+  text-align-last: center;
+  border: none;
+  margin-right: 7px;
 }
 
 .about{
@@ -178,20 +190,6 @@ a.black:hover{
   font-family: Arial, Helvetica, sans-se;
 }
 
-/* .returnBooks{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(400px, 1fr));
-  grid-column-start: 4;
-  grid-auto-rows: 1fr; 
-  margin-bottom: 40px;
-  justify-items: center;
-  grid-column-gap: 2em;
-  grid-row-gap: 3em;
-
-} */
-
-
 
 .footer {
   position: fixed;
@@ -199,7 +197,7 @@ a.black:hover{
   bottom: 0;
   padding: 2px;
   width: 100%;
-  height: 30px;
+  height: 5%;
   background-color: black;
   color: white;
   text-align: center;
@@ -213,23 +211,44 @@ a.black:hover{
   margin-top: 6px;
 }
 
-@media (max-width: 900px) {
 
-  .about{
-    margin: 200px 0;
-    background-color: black;
-    padding: 5px;
-    color: white;
-    font-size: 14px;
-    font-family: Arial, Helvetica, sans-se;
+.links{
+  width:45%;
+  margin: 0 auto
+}
+
+
+.links a{
+  cursor: pointer;
+  margin: 0 auto;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}
+
+@media (max-width: 800px) {
+
+  .links p{
+    font-size: 30px;
   }
 
-  .one{
-    background-color: black;
-    text-align: center;
-    margin: auto;
-    width: 50%;
-    
-  }
+  .app {
+    background-image: url(./images/pizza.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+}
+  
+form{
+  display: flex;
+  justify-content: center;
+  color:white;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 2%;
+  margin-top: 40%;
+}
+  
 
 }
