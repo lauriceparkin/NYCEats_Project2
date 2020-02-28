@@ -17,3 +17,12 @@ export default Restaurants;
 
 
 
+
+
+
+{/* <div className="result">
+        <p>Restaurant Name</p>
+        <p>Cuisine</p>
+        <p>Address</p>
+        <p>Grade</p>
+      </div> */}
