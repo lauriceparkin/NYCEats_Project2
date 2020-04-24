@@ -1,5 +1,3 @@
-ReadME
-
 
 Know Before you Nom, NYC
 
